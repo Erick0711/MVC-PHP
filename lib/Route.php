@@ -24,8 +24,26 @@ class Route
 
         $method = $_SERVER['REQUEST_METHOD'];
         foreach (self::$routes[$method] as $route => $callback) {
-            if($route == $uri){
-                $callback(); // RECUPERA LA FUNCION Y LA EJECUTA
+            if(strpos($route, ':') !== false) 
+            {
+                $route = preg_replace('#:[a-zA-Z0-9]+#', '([a-zA-Z0-9]+)', $route);
+                // echo $route;
+                // return;
+            }
+
+            if(preg_match("#^$route$#", $uri, $matches)) // ENCONTRADA LA SIMILITUD CON UN COMODIN DE EXPRESION REGULAR DONDE TIENE QUE INICIAR Y TERMINAR CON ESA URL SINO ENVIARA UN 404
+            {
+                
+                $params = array_slice($matches, 1);
+                $response = $callback(...$params); // RECUPERA LA FUNCION Y LA EJECUTA
+                if(is_array($response) || is_object($response)){
+                    header('content-type: application/json');
+                    echo json_encode($response);
+                }else{
+                    echo $response;
+                }
+
+                // echo json_encode($params);
                 return;
             }
         }
