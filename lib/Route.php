@@ -35,14 +35,22 @@ class Route
             {
                 
                 $params = array_slice($matches, 1);
-                $response = $callback(...$params); // RECUPERA LA FUNCION Y LA EJECUTA
+                // $response = $callback(...$params); // RECUPERA LA FUNCION Y LA EJECUTA
+                if (is_callable($callback)) 
+                {
+                    $response = $callback(...$params);
+                }
+                if (is_array($callback)) 
+                {
+                    $controllers = new $callback[0];
+                    $response = $controllers->{$callback[1]}(...$params);
+                }
                 if(is_array($response) || is_object($response)){
                     header('content-type: application/json');
                     echo json_encode($response);
                 }else{
                     echo $response;
                 }
-
                 // echo json_encode($params);
                 return;
             }
