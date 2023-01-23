@@ -3,8 +3,11 @@ namespace App\Controllers;
 
 class Controller
 {
-    public function view($route)
+    public function view($route, $data = [])
     {
+        // DESTRUTURAR EL ARRAY
+        extract($data);
+        
         $route = str_replace('.','/',$route); // PRUEBA/PRUEBA
 
         if(file_exists("../resources/views/{$route}.php")){

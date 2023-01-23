@@ -8,5 +8,8 @@
 </head>
 <body>
     <h1>Esto es la pagina inicio</h1>
+
+    <p>Titulo: <?= $title ?></p>
+    <p>Descripcion: <?= $description ?></p>
 </body>
 </html>
