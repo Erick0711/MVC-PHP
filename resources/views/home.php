@@ -5,11 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <h1>Esto es la pagina inicio</h1>
-
-    <p>Titulo: <?= $title ?></p>
-    <p>Descripcion: <?= $description ?></p>
+    <?php print_r($contacts)?>
 </body>
 </html>
