@@ -8,11 +8,7 @@ class HomeController extends Controller
     public function index()
     {
         $contactModel = new Contact();
-        $contacts =  $contactModel->create([
-            'name' => 'Juan Laura',
-            'lastname' => 'Padilla',
-            'age' => 20,
-        ]);
+        $contacts =  $contactModel->all();
 
         return $this->view('home', ['contacts' => $contacts]);
     }
