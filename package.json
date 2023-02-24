@@ -1,0 +1,23 @@
+{
+  "name": "mvc",
+  "version": "1.0.0",
+  "description": "*FUNCIONALIDADES*\r 1•  CONEXION A LA BASE DE DATOS MEDIANTE DEFINICIONES O CONSTANTES LISTAS PARA MODIFICAR\r 2•  AUTOLOAD - PARA LA IDENFICACION DE CLASES, SIN REALIZAR INCLUDE A CADA CLASE\r 3•  MODELO - VISTA - CONTROLADOR\r 4•  CREACION DE RUTAS SIN NOMBRES PERSONALIZADOS\r 5•  FUNCIONALIDAD DE OBTENER DATOS DINAMICAMENTE\r 6•  FUNCIONALIDAD DE INSERTAR DATOS DINAMICAMENTE\r 7•  FUNCIONALIDAD DE ACTUALIZAR DATOS DINAMICAMENTE\r 8•  FUNCIONALIDAD DE ELIMINAR DATOS DINAMICAMENTE\r 9•  FUNCIONALIDAD DE FILTRAR MAS DE UN DATO DINAMICAMENTE\r 10• FUNCIONALIDAD DE ELIMINAR DATOS DINAMICAMENTE\r 11• FUNCIONALIDAD DE PAGINACIÓN",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erick0711/MVC-PHP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erick0711/MVC-PHP/issues"
+  },
+  "homepage": "https://github.com/Erick0711/MVC-PHP#readme"
+}
