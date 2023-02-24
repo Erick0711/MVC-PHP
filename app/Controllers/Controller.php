@@ -16,8 +16,13 @@ class Controller
             $content = ob_get_clean();
             return $content;
         }else{
-            echo "404 Not Found";
+            include("../resources/views/404.php");
         }
+    }
+
+    public function redirect($route, $data = [])
+    {
+        header("Location: {$route}");
     }
 }
 ?>

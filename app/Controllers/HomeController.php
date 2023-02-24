@@ -1,16 +1,19 @@
 <?php
 namespace App\Controllers;
-use App\Controllers\Controller;
-
 use App\Models\Contact;
+
 class HomeController extends Controller
 {
+    public function instance()
+    {
+        $instance = new Contact;
+        return $instance;
+    }
     public function index()
     {
-        $contactModel = new Contact();
-        $contacts =  $contactModel->all();
-
-        return $this->view('home', ['contacts' => $contacts]);
+        $contac =  $this->instance()->all();
+        return $this->view('home', ['contacts' => $contac]);
     }
 }
 ?>
+
